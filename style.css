@@ -1,0 +1,101 @@
+/* 简体中文 */
+@font-face {
+    font-family: 'SC';
+    font-weight: 400;
+    src: url('../plugins/siyuan-ttf-template/fonts/font.woff') format('woff');
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SC';
+    font-weight: 700;
+    src: url('../plugins/siyuan-ttf-template/fonts/font.woff') format('woff');
+    font-style: normal;
+    font-display: swap;
+}
+
+/* 繁体中文 */
+@font-face {
+    font-family: 'TC';
+    font-weight: 400;
+    src: url('../plugins/siyuan-ttf-template/fonts/font.woff') format('woff');
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'TC';
+    font-weight: 700;
+    src: url('../plugins/siyuan-ttf-template/fonts/font.woff') format('woff');
+    font-style: normal;
+    font-display: swap;
+}
+
+/* 日语 */
+@font-face {
+    font-family: 'JP';
+    font-weight: 400;
+    src: url('../plugins/siyuan-ttf-template/fonts/font.woff') format('woff');
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'JP';
+    font-weight: 700;
+    src: url('../plugins/siyuan-ttf-template/fonts/font.woff') format('woff');
+    font-style: normal;
+    font-display: swap;
+}
+
+/* 拉丁文 */
+@font-face {
+    font-family: 'Sans';
+    font-weight: 400;
+    src: url('../plugins/siyuan-ttf-template/fonts/font.woff') format('woff');
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sans';
+    font-weight: 700;
+    src: url('../plugins/siyuan-ttf-template/fonts/font.woff') format('woff');
+    font-style: normal;
+    font-display: swap;
+}
+
+/* 拉丁文斜体 */
+@font-face {
+    font-family: 'Sans';
+    font-weight: 400;
+    src: url('../plugins/siyuan-ttf-template/fonts/font.woff') format('woff');
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sans';
+    font-weight: 700;
+    src: url('../plugins/siyuan-ttf-template/fonts/font.woff') format('woff');
+    font-style: italic;
+    font-display: swap;
+}
+
+/* 2025/10/30 跟进官方自带 --b3-font-family 变量，去掉一些字体 */
+:root {
+    --b3-font-family: 'Sans', 'Emojis Additional', 'Emojis Reset', BlinkMacSystemFont, Helvetica, 'Luxi Sans', 'DejaVu Sans', arial, sans-serif, emojis !important;
+}
+
+:root:lang(zh-CN) {
+    --b3-font-family: 'SC', 'Sans', 'Emojis Additional', 'Emojis Reset', BlinkMacSystemFont, Helvetica, 'PingFang SC', 'Luxi Sans', 'DejaVu Sans', 'Hiragino Sans GB', 'Source Han Sans SC', arial, 'Microsoft Yahei', sans-serif, emojis !important;
+}
+
+:root:lang(zh-TW) {
+    --b3-font-family: 'TC', 'Sans', 'Emojis Additional', 'Emojis Reset', BlinkMacSystemFont, Helvetica, 'PingFang TC', 'Luxi Sans', 'DejaVu Sans', 'Hiragino Sans TC', 'Source Han Sans TC', 'Microsoft JhengHei', arial, sans-serif, emojis !important;
+}
+
+:root:lang(ja) {
+    --b3-font-family: 'JP', 'Sans', 'Emojis Additional', 'Emojis Reset', BlinkMacSystemFont, Helvetica, 'Luxi Sans', 'DejaVu Sans', 'Yu Gothic UI', arial, sans-serif, emojis !important;
+}

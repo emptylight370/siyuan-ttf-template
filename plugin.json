@@ -1,0 +1,29 @@
+{
+  "name": "siyuan-ttf-template",
+  "author": "Emptylight",
+  "url": "https://github.com/emptylight370/siyuan-ttf-template",
+  "version": "1.0.0",
+  "backends": ["all"],
+  "frontends": ["all"],
+  "disabledInPublish": false,
+  "minAppVersion": "3.7.0",
+  "displayName": {
+    "default": "Font Plugin Sample",
+    "zh-CN": "字体插件示例"
+  },
+  "description": {
+    "default": "Make your font plugin. Use your font as the interface font.",
+    "zh-CN": "制作你的字体插件。用你的字体作为界面字体。"
+  },
+  "readme": {
+    "default": "README.md",
+    "zh-CN": "README.zh-CN.md"
+  },
+  "funding": {
+    "openCollective": "",
+    "patreon": "",
+    "github": "",
+    "custom": []
+  },
+  "keywords": []
+}

@@ -1,0 +1,51 @@
+name: Create Release on Push Package.json
+
+on:
+  push:
+    paths:
+      - plugin.json
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+      packages: write
+
+    steps:
+      # checkout
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+          fetch-tags: true
+
+      - name: Setup mise
+        uses: jdx/mise-action@v4
+
+      - name: Package
+        run: zip -r package.zip . -i 'index.*' 'style.css' 'font-face.css' 'icon.png' 'preview.png' 'plugin.json' 'README*.md' 'fonts/*'
+
+      - name: Get version
+        uses: emptylight370/jq-action@v1
+        id: version
+        with:
+          data: plugin.json
+          filter: .version
+
+      - name: Generate release description
+        run: |
+          git cliff -u -o release.md -t ${{ steps.version.outputs.result }}
+          prettier -w release.md
+
+      - name: Release
+        uses: softprops/action-gh-release@v3
+        with:
+          files: package.zip
+          name: Release ${{ steps.version.outputs.result }}
+          tag_name: ${{ steps.version.outputs.result }}
+          make_latest: true
+          body_path: release.md
