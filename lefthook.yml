@@ -6,17 +6,17 @@ pre-commit:
         # 仅在修改了version的时候执行
         - run: $(! git diff --cached -U0 'plugin.json' | grep -q -F 'version')
       run: mise run changelog
-      fail_text: '请检查mise是否正常初始化'
+      fail_text: "请检查mise是否正常初始化"
 
     - name: Format code
       run: prettier -l {staged_files} | xargs -r prettier -w
       stage_fixed: true
       glob:
-        - '*.md'
-        - '*.json'
-        - '*.js'
-        - '*.css'
-      fail_text: '请检查prettier安装状态，运行mise install安装依赖'
+        - "*.md"
+        - "*.json"
+        - "*.js"
+        - "*.css"
+      fail_text: "请检查prettier安装状态，运行mise install安装依赖"
 
 commit-msg:
   jobs:

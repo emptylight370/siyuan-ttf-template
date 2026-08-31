@@ -37,7 +37,7 @@ render_always = true
 # An array of regex based postprocessors to modify the changelog.
 postprocessors = [
   # Replace the placeholder <REPO> with a URL.
-  { pattern = "<REPO>", replace = "https://github.com/emptylight370/siyuan-ttf-Alibaba_PuHui_Sans" },
+  { pattern = "<REPO>", replace = "https://github.com/emptylight370/siyuan-ttf-template" },
 ]
 # output file path
 output = "changelog.md"
