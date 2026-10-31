@@ -19,6 +19,9 @@
     "default": "README.md",
     "zh-CN": "README.zh-CN.md"
   },
+  "publish": {
+    "resources": ["fonts/"]
+  },
   "funding": {
     "openCollective": "",
     "patreon": "",
