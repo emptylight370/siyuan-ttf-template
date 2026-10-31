@@ -6,7 +6,7 @@ This template is for creating custom font plugins for SiYuan Note. The documenta
 
 This plugin may not be compatible with other font or Emoji plugins in the bazaar. Please disable other font or Emoji plugins when using this plugin.
 
-Currently, this plugin template is created for SiYuan Note version 3.8.6-alpha.2 and above, cannot be used with lower versions.
+Currently, this plugin template is created for SiYuan Note version 3.8.7 and above, cannot be used with lower versions (3.8.7 adds support for enabling plugins in the standalone settings window, via the `settingsWindow` field in `plugin.json`).
 
 > [!NOTE]
 > This plugin modifies the font range: global. Modifies the variable: `--b3-font-family-default`.
@@ -59,13 +59,15 @@ Required files: `plugin.json`, `index.js`, `index.css`, `fonts/*`, `icon.png`, `
 
 ## Reference
 
-| Item                    | Description                                                                                                      |
-| ----------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| Font format             | `woff` or `woff2` is recommended, as they are optimized for browsers                                             |
-| mise.toml               | mise configuration file for managing runtime tools (tools used during development)                               |
-| `name` in `plugin.json` | The plugin's installation folder must match this name, and it is also used in path concatenation                 |
-| Language reference      | Simplified Chinese: `zh-CN`, Traditional Chinese: `zh-TW`, Japanese: `ja`, other languages: no `:lang` attribute |
-| Adding a language       | Non-English languages: add `:root:lang()`. English: modify `:root` directly as the default fallback              |
+| Item                    | Description                                                                                                               |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| Font format             | `woff` or `woff2` is recommended, as they are optimized for browsers                                                      |
+| mise.toml               | mise configuration file for managing runtime tools (tools used during development)                                        |
+| `name` in `plugin.json` | The plugin's installation folder must match this name, and it is also used in path concatenation                          |
+| Language reference      | Simplified Chinese: `zh-CN`, Traditional Chinese: `zh-TW`, Japanese: `ja`, other languages: no `:lang` attribute          |
+| Adding a language       | Non-English languages: add `:root:lang()`. English: modify `:root` directly as the default fallback                       |
+| `settingsWindow`        | 3.8.7 and above support enabling plugins in the standalone settings window; the minimum version is raised accordingly     |
+| `icon` / `preview`      | Point to `icon.png` / `preview.png`; if not needed, delete the file(s) and the field(s) — a field value must not be empty |
 
 ## Acknowledgments
 

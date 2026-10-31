@@ -7,3 +7,7 @@ lefthook = "latest"
 description = "Install lefthook hooks"
 run = "lefthook install"
 sources = ["lefthook.yml", ".lefthook", ".lefthook-local"]
+
+[tasks.format]
+description = "Format code with Prettier"
+run = "prettier -w ."

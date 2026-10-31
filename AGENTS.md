@@ -12,7 +12,9 @@
 2. 字体与样式全在 `index.css`，`index.js` 只是极薄的加载/卸载壳。
 3. 改动范围始终是"全局字体"，只覆盖 CSS 变量 `--b3-font-family-default`，因此与设置中的编辑器字体、以及其他改别的变量的插件/代码片段兼容。
 
-要求思源 3.8.6-alpha.2 及以上：`plugin.json` 的 `minAppVersion` 与两份 README 已同步为该值（模板已跟进官方自带的 `--b3-font-family-default` 变量）。注意这是预发布版本号，正式发版前应确认是否改回稳定版。
+要求思源 3.8.7 及以上（`plugin.json` 的 `minAppVersion`，两份 README 同步）：3.8.7 起支持在**独立设置窗口中启用插件**，对应 `plugin.json` 的 `settingsWindow: true` 字段；模板已跟进官方自带的 `--b3-font-family-default` 变量。
+
+`plugin.json` 另有 `icon`、`preview` 字段分别指向 `icon.png`、`preview.png`；不需要时删除文件与对应字段，字段值不能留空。
 
 ## 常用命令
 
