@@ -6,7 +6,7 @@
   "backends": ["all"],
   "frontends": ["all"],
   "disabledInPublish": false,
-  "minAppVersion": "3.7.0",
+  "minAppVersion": "3.8.6-alpha.2",
   "displayName": {
     "default": "Font Plugin Sample",
     "zh-CN": "字体插件示例"
@@ -19,6 +19,8 @@
     "default": "README.md",
     "zh-CN": "README.zh-CN.md"
   },
+  "icon": "icon.png",
+  "preview": "preview.png",
   "publish": {
     "resources": ["fonts/"]
   },
