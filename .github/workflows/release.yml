@@ -37,17 +37,21 @@ jobs:
           tag: ${{ steps.version.outputs.result }}
 
       - name: Setup mise
+        if: steps.compare.outputs.exists != 'true'
         uses: jdx/mise-action@v5
 
       - name: Package
+        if: steps.compare.outputs.exists != 'true'
         run: zip -r package.zip . -i 'index.*' 'icon.png' 'preview.png' 'plugin.json' 'README*.md' 'fonts/*'
 
       - name: Generate release description
+        if: steps.compare.outputs.exists != 'true'
         run: |
           git cliff -u -o release.md -t ${{ steps.version.outputs.result }}
           prettier -w release.md
 
       - name: Release
+        if: steps.compare.outputs.exists != 'true'
         uses: softprops/action-gh-release@v3
         with:
           files: package.zip
