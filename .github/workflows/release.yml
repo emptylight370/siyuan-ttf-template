@@ -23,18 +23,24 @@ jobs:
           fetch-depth: 0
           fetch-tags: true
 
-      - name: Setup mise
-        uses: jdx/mise-action@v4
-
-      - name: Package
-        run: zip -r package.zip . -i 'index.*' 'style.css' 'font-face.css' 'icon.png' 'preview.png' 'plugin.json' 'README*.md' 'fonts/*'
-
       - name: Get version
         uses: emptylight370/jq-action@v1
         id: version
         with:
           data: plugin.json
           filter: .version
+
+      - name: Skip if release exists
+        uses: mukunku/release-exists-action@v1.1.0
+        id: compare
+        with:
+          tag: ${{ steps.version.outputs.result }}
+
+      - name: Setup mise
+        uses: jdx/mise-action@v5
+
+      - name: Package
+        run: zip -r package.zip . -i 'index.*' 'icon.png' 'preview.png' 'plugin.json' 'README*.md' 'fonts/*'
 
       - name: Generate release description
         run: |
